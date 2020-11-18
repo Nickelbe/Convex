@@ -1,0 +1,16 @@
+all: run
+
+run: main.o list.o convex.o
+	g++ main.o list.o convex.o -o run
+
+main.o: main.cpp
+	g++ -c main.cpp
+
+list.o: list.cpp
+	g++ -c list.cpp
+
+convex.o: convex.cpp
+	g++ -c convex.cpp
+
+clean:
+	rm -rf *.o run
